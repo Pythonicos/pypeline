@@ -3,7 +3,7 @@ import operator
 from unittest import TestCase
 from unittest.mock import Mock, call
 
-from pypiline import Pypeline
+from pypeline import Pypeline
 
 
 class PypilineTest(TestCase):
