@@ -3,13 +3,13 @@ import operator
 from unittest import TestCase
 from unittest.mock import Mock, call
 
-from pypeline import Pypeline
+from pypiline import Pypiline
 
 
 class PypilineTest(TestCase):
-    def test_pypeline__two_chained_simple_functions_arg_list__expected_correctly_value(self):
+    def test_pypiline__two_chained_simple_functions_arg_list__expected_correctly_value(self):
         # FIXTURE
-        pipeline = Pypeline().append(
+        pipeline = Pypiline().append(
             math.pow, 2, 2
         ).append(
             operator.add, 5
@@ -21,12 +21,12 @@ class PypilineTest(TestCase):
         # VERIFY
         self.assertEqual(9, result)  # add(pow(2**2), 5)
 
-    def test_pypeline__two_chained_simple_functions_kwargs__expected_correctly_value(self):
+    def test_pypiline__two_chained_simple_functions_kwargs__expected_correctly_value(self):
         # FIXTURE
         pow = lambda x, y: math.pow(x, y)  # pow take no kwarg
         add = lambda a, b: operator.add(a, b)  # add take no kwargs
 
-        pipeline = Pypeline().append(
+        pipeline = Pypiline().append(
             pow, x=2, y=2
         ).append(
             add, b=5
@@ -38,12 +38,12 @@ class PypilineTest(TestCase):
         # VERIFY
         self.assertEqual(9, result)  # add(pow(x=2,y=2), b=5)
 
-    def test_pypeline__two_chained_simple_functions_kwargs_and_arg_list__expected_correctly_value(self):
+    def test_pypiline__two_chained_simple_functions_kwargs_and_arg_list__expected_correctly_value(self):
         # FIXTURE
         pow = lambda x, y: math.pow(x, y)  # pow take no kwarg
         add = lambda a, b: operator.add(a, b)  # add take no kwargs
 
-        pipeline = Pypeline().append(
+        pipeline = Pypiline().append(
             pow, 2, y=2
         ).append(
             add, 5
@@ -55,16 +55,16 @@ class PypilineTest(TestCase):
         # VERIFY
         self.assertEqual(9, result)  # add(pow(2,y=2), 5)
 
-    def test_pypeline__two_chained_pipelines_mock_functions__expected_correctly_value(self):
+    def test_pypiline__two_chained_pipelines_mock_functions__expected_correctly_value(self):
         # FIXTURE
         expected = object()
         test_method = Mock(return_value=expected)
-        sub_pipeline = Pypeline().append(
+        sub_pipeline = Pypiline().append(
             test_method, 'first', 'second', third='third'
         ).append(
             test_method, something_else=True
         )
-        pipeline = Pypeline().append_context(
+        pipeline = Pypiline().append_context(
             sub_pipeline
         ).append_context(
             sub_pipeline

@@ -8,7 +8,7 @@
 
 ### Encadeando tarefas
 
-Com pypeline você consegue encadear tarefas. Cada tarefa retorna seu resultado para a próxima tarefa.
+Com pypiline você consegue encadear tarefas. Cada tarefa retorna seu resultado para a próxima tarefa.
 
 
             +---------------------------------------------+
@@ -23,7 +23,7 @@ Com pypeline você consegue encadear tarefas. Cada tarefa retorna seu resultado 
 
 Exemplo:
 
-        pipeline = Pypeline().append(
+        pipeline = Pypiline().append(
             math.pow, 2, 2
         ).append(
             operator.add, 5
@@ -59,12 +59,12 @@ Você também pode encadear pipelines (O resultado da pipeline não é repassado
 
 Exemplo:
 
-            sub_pipeline = Pypeline().append(
+            sub_pipeline = Pypiline().append(
                 do_something, 'first', 'second', third='third'
             ).append(
                 do_something, something_else=True
             )
-            pipeline = Pypeline().append_context(
+            pipeline = Pypiline().append_context(
                 sub_pipeline
             ).append_context(
                 sub_pipeline
