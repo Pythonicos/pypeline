@@ -2,7 +2,7 @@
 
 ## Instalação
 
-        pip instal pypeline-tool
+        pip install pypeline-tool
         
 ## Utilização
 
@@ -28,7 +28,7 @@ Exemplo:
         ).append(
             operator.add, 5
         )
-        pipeline.do()  # output: 9 -> add(pow(2**2), 5)
+        pipeline.do()  # output: 9 -> add(pow(2, 2), 5)
 
 ### Encadear pipelines
 Você também pode encadear pipelines (O resultado da pipeline não é repassado para outra pipeline):
@@ -70,4 +70,3 @@ Exemplo:
                 sub_pipeline
             )
             sub_pipeline.do()
-
