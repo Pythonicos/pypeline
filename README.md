@@ -1,14 +1,14 @@
-# PYPILINE
+# PYPELINE
 
 ## Instalação
 
-        pip instal pypiline
+        pip instal pypeline
         
 ## Utilização
 
 ### Encadeando tarefas
 
-Com pypiline você consegue encadear tarefas. Cada tarefa retorna seu resultado para a próxima tarefa.
+Com pypeline você consegue encadear tarefas. Cada tarefa retorna seu resultado para a próxima tarefa.
 
 
             +---------------------------------------------+
@@ -23,7 +23,7 @@ Com pypiline você consegue encadear tarefas. Cada tarefa retorna seu resultado 
 
 Exemplo:
 
-        pipeline = Pypiline().append(
+        pipeline = Pypeline().append(
             math.pow, 2, 2
         ).append(
             operator.add, 5
@@ -59,12 +59,12 @@ Você também pode encadear pipelines (O resultado da pipeline não é repassado
 
 Exemplo:
 
-            sub_pipeline = Pypiline().append(
+            sub_pipeline = Pypeline().append(
                 do_something, 'first', 'second', third='third'
             ).append(
                 do_something, something_else=True
             )
-            pipeline = Pypiline().append_context(
+            pipeline = Pypeline().append_context(
                 sub_pipeline
             ).append_context(
                 sub_pipeline
