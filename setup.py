@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='pypeline-tool',
-      version='1.0.0',
+      version='1.0.1',
       description='Pipeline tool',
       author='Ohrlando',
       author_email='pythonicos@outlook.com',
