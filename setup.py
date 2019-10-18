@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-setup(name='pypeline',
+setup(name='pypeline-tool',
       version='1.0.0',
       description='Pipeline tool',
       author='Ohrlando',

@@ -2,7 +2,7 @@
 
 ## Instalação
 
-        pip instal pypeline
+        pip instal pypeline-tool
         
 ## Utilização
 
